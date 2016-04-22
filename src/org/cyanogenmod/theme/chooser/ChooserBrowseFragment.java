@@ -271,7 +271,6 @@ public class ChooserBrowseFragment extends Fragment
                     View.GONE : View.VISIBLE);
 
             item.boundPackage = pkgName;
-            item.applyThemeColor();
 
             if (mFilters.isEmpty()) {
                 bindDefaultView(item, pkgName, hsImagePath);
@@ -297,6 +296,7 @@ public class ChooserBrowseFragment extends Fragment
             if (mFilters.contains(ThemesColumns.MODIFIES_ICONS)) return;
 
             item.thumbnail.setImageDrawable(null);
+            item.applyThemeColor();
 
             LoadImage loadImageTask = new LoadImage(item, pkgName, null);
             loadImageTask.execute();
@@ -305,6 +305,7 @@ public class ChooserBrowseFragment extends Fragment
         private void bindOverlayView(ThemeItemHolder item, String pkgName,
                                      String styleImgPath) {
             item.thumbnail.setImageDrawable(null);
+            item.applyThemeColor();
 
             LoadImage loadImageTask = new LoadImage(item, pkgName, styleImgPath);
             loadImageTask.execute();
@@ -318,6 +319,7 @@ public class ChooserBrowseFragment extends Fragment
                                        String hsImagePath) {
 
             item.thumbnail.setImageDrawable(null);
+            item.applyThemeColor();
 
             LoadImage loadImageTask = new LoadImage(item, pkgName, null);
             loadImageTask.execute();
